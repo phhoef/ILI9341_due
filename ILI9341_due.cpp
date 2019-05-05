@@ -142,7 +142,7 @@ bool ILI9341_due::begin(void)
 			delay(150);
 		}
 
-		writecommand_last(ILI9341_SLPOUT);    // any byte here, as the first byte fails
+		disableCS(); // important for ST7789
 
 		const uint8_t *addr = init_commands;
 		while (1) {
